@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "sendingPartnerId": "vooma-dev",
+    "receivingPartnerId": "simulated-customer",
+    "release": "004010"
+  },
+  "payload": {
+    "heading": {
+      "transaction_set_header_ST": {
+        "transaction_set_identifier_code_01": "204",
+        "transaction_set_control_number_02": 1
+      },
+      "beginning_segment_for_shipment_information_transaction_B2": {
+        "standard_carrier_alpha_code_02": "XXXX",
+        "shipment_identification_number_04": "9694966",
+        "shipment_method_of_payment_06": "PP"
+      },
+      "set_purpose_B2A": {
+        "transaction_set_purpose_code_01": "00"
+      },
+      "business_instructions_and_reference_number_L11": [
+        {
+          "reference_identification_01": "T11048",
+          "reference_identification_qualifier_02": "VD"
+        },
+        {
+          "reference_identification_01": "CAD",
+          "reference_identification_qualifier_02": "RB"
+        },
+        {
+          "reference_identification_01": "CH ROBINSON",
+          "reference_identification_qualifier_02": "TH"
+        }
+      ],
+      "date_time_G62": {
+        "date_qualifier_01": "64",
+        "date_02": "2008-02-21",
+        "time_qualifier_03": "1",
+        "time_04": "15:33"
+      },
+      "note_special_instruction_NTE": [
+        {
+          "note_reference_code_01": "ZZZ",
+          "description_02": "437"
+        },
+        {
+          "note_reference_code_01": "INT",
+          "description_02": "FAX RATE CONFIRMATION NOTES"
+        }
+      ],
+      "name_N1_loop_customs_broker": [
+        {
+          "name_N1": {
+            "entity_identifier_code_01": "CB",
+            "name_02": "TRANSPORTER CUSTOM SERVIC"
+          },
+          "geographic_location_N4": {
+            "city_name_01": "MINNEAPOLIS",
+            "state_or_province_code_02": "MN"
+          },
+          "contact_G61": [
+            {
+              "contact_function_code_01": "CN",
+              "name_02": "CUSTOMS BROKER CONTACT",
+              "communication_number_qualifier_03": "TE",
+              "communication_number_04": "2485575100"
+            }
+          ]
+        }
+      ],
+      "name_N1_loop_contact_person": [
+        {
+          "name_N1": {
+            "entity_identifier_code_01": "VI",
+            "name_02": "CH ROBINSON CONTACT"
+          },
+          "contact_G61": [
+            {
+              "contact_function_code_01": "CN",
+              "name_02": "MIKE JAHNKE",
+              "communication_number_qualifier_03": "TE",
+              "communication_number_04": "8002335623",
+              "contact_inquiry_reference_05": "0846"
+            },
+            {
+              "contact_function_code_01": "IC",
+              "name_02": "MIKE JAHNKE",
+              "communication_number_qualifier_03": "EM",
+              "communication_number_04": "JAHNMIC@CHROBINSON.COM"
+            },
+            {
+              "contact_function_code_01": "ZZ",
+              "name_02": "CH ROBINSON"
+            }
+          ]
+        }
+      ],
+      "equipment_details_N7_loop": [
+        {
+          "equipment_details_N7": {
+            "equipment_number_02": "ZZZZ",
+            "weight_03": 45000,
+            "weight_qualifier_04": "G",
+            "equipment_description_code_11": "TV",
+            "equipment_length_15": 4800,
+            "height_20": 0,
+            "width_21": 0
+          }
+        }
+      ]
+    },
+    "detail": {
+      "stop_off_details_S5_loop": [
+        {
+          "stop_off_details_S5": {
+            "stop_sequence_number_01": 1,
+            "stop_reason_code_02": "LD"
+          },
+          "date_time_G62": [
+            {
+              "date_qualifier_01": "10",
+              "date_02": "2008-01-29"
+            },
+            {
+              "date_qualifier_01": "38",
+              "date_02": "2008-01-29"
+            }
+          ],
+          "note_special_instruction_NTE": [
+            {
+              "note_reference_code_01": "OTH",
+              "description_02": "No Touch"
+            }
+          ],
+          "name_N1_loop_ship_from": [
+            {
+              "name_N1": {
+                "entity_identifier_code_01": "SF",
+                "name_02": "Jahnco",
+                "identification_code_qualifier_03": "ZZ",
+                "identification_code_04": "W2297648"
+              },
+              "address_information_N3": [
+                {
+                  "address_information_01": "255 Ripley Street"
+                }
+              ],
+              "geographic_location_N4": {
+                "city_name_01": "Hobart",
+                "state_or_province_code_02": "IN",
+                "postal_code_03": "46342",
+                "country_code_04": "USA"
+              },
+              "contact_G61": [
+                {
+                  "contact_function_code_01": "CN",
+                  "name_02": "Mike",
+                  "communication_number_qualifier_03": "TE",
+                  "communication_number_04": "2192321223"
+                }
+              ]
+            }
+          ],
+          "order_identification_detail_OID_loop": [
+            {
+              "order_identification_detail_OID": {
+                "purchase_order_number_02": "PO UNAVAILABLE",
+                "weight_unit_code_06": "L",
+                "weight_07": 45000
+              },
+              "description_marks_and_numbers_L5_loop": [
+                {
+                  "description_marks_and_numbers_L5": {
+                    "lading_line_item_number_01": 1,
+                    "lading_description_02": "GC"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "stop_off_details_S5": {
+            "stop_sequence_number_01": 2,
+            "stop_reason_code_02": "UL"
+          },
+          "date_time_G62": [
+            {
+              "date_qualifier_01": "68",
+              "date_02": "2008-01-30"
+            },
+            {
+              "date_qualifier_01": "54",
+              "date_02": "2008-01-30"
+            }
+          ],
+          "note_special_instruction_NTE": [
+            {
+              "note_reference_code_01": "OTH",
+              "description_02": "Driver Count Required"
+            }
+          ],
+          "name_N1_loop_ship_to": [
+            {
+              "name_N1": {
+                "entity_identifier_code_01": "ST",
+                "name_02": "JAHN HANCOCK",
+                "identification_code_qualifier_03": "ZZ",
+                "identification_code_04": "W2748760"
+              },
+              "address_information_N3": [
+                {
+                  "address_information_01": "2119 PILLSBURY AVE S #508"
+                }
+              ],
+              "geographic_location_N4": {
+                "city_name_01": "MINNEAPOLIS",
+                "state_or_province_code_02": "MN",
+                "postal_code_03": "55404",
+                "country_code_04": "USA"
+              },
+              "contact_G61": [
+                {
+                  "contact_function_code_01": "CN",
+                  "name_02": "GENERAL CONTACT NUMBER",
+                  "communication_number_qualifier_03": "TE",
+                  "communication_number_04": "6128715471"
+                }
+              ]
+            }
+          ],
+          "order_identification_detail_OID_loop": [
+            {
+              "order_identification_detail_OID": {
+                "purchase_order_number_02": "PO UNAVAILABLE",
+                "weight_unit_code_06": "L",
+                "weight_07": 45000
+              },
+              "description_marks_and_numbers_L5_loop": [
+                {
+                  "description_marks_and_numbers_L5": {
+                    "lading_line_item_number_01": 2,
+                    "lading_description_02": "GC"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "total_weight_and_charges_L3": {
+        "weight_01": 45000,
+        "weight_qualifier_02": "G",
+        "freight_rate_03": 1500,
+        "rate_value_qualifier_04": "FR",
+        "charge_05": 1500,
+        "advances_06": 0,
+        "lading_quantity_11": 0
+      },
+      "transaction_set_trailer_SE": {
+        "number_of_included_segments_01": 39,
+        "transaction_set_control_number_02": 1
+      }
+    }
+  }
+}

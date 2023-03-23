@@ -7,10 +7,11 @@ import {
 import { requiredEnvVar } from "../../../lib/environment.js";
 import { PARTNERS_KEYSPACE_NAME } from "../../../lib/constants.js";
 import {
-  failedExecution, FailureResponse,
+  failedExecution,
+  FailureResponse,
   generateExecutionId,
   markExecutionAsSuccessful,
-  recordNewExecution
+  recordNewExecution,
 } from "../../../lib/execution.js";
 import {
   RemotePollerConfig,
@@ -31,10 +32,12 @@ const stashClient = new StashClient({
   apiKey: requiredEnvVar("STEDI_API_KEY"),
 });
 
-const getRemotePoller = async (remotePollerConfig: RemotePollerConfig): Promise<RemotePoller> => {
-  switch(remotePollerConfig.connectionDetails.protocol) {
+const getRemotePoller = async (
+  remotePollerConfig: RemotePollerConfig
+): Promise<RemotePoller> => {
+  switch (remotePollerConfig.connectionDetails.protocol) {
     case "ftp":
-      return await FtpPoller.getPoller(remotePollerConfig.connectionDetails)
+      return await FtpPoller.getPoller(remotePollerConfig.connectionDetails);
     case "sftp":
       return await SftpPoller.getPoller(remotePollerConfig.connectionDetails);
   }
@@ -61,9 +64,8 @@ export const handler = async (
     );
 
     // `FtpPollerConfigMap.parse` handles failed stash lookup as well (value is undefined)
-    const remotePollerConfigMap: RemotePollerConfigMap = RemotePollerConfigMapSchema.parse(
-      stashResponse.value
-    );
+    const remotePollerConfigMap: RemotePollerConfigMap =
+      RemotePollerConfigMapSchema.parse(stashResponse.value);
     const pollerConfig: RemotePollerConfig = remotePollerConfigMap[configId];
 
     if (!pollerConfig) {
@@ -89,8 +91,8 @@ export const handler = async (
         executionId,
         new ErrorWithContext(
           "at least one processing error encountered during polling",
-          { results },
-        ),
+          { results }
+        )
       );
     }
 
@@ -148,7 +150,8 @@ const pollRemoteServer = async (
 
     try {
       await remotePoller.downloadFile(remotePollerConfig.destination, file);
-      remotePollerConfig.deleteAfterProcessing && (await remotePoller.deleteFile(file));
+      remotePollerConfig.deleteAfterProcessing &&
+        (await remotePoller.deleteFile(file));
       ftpPollingResults.processedFiles.push(file);
     } catch (e) {
       const error = ErrorWithContext.fromUnknown(e);

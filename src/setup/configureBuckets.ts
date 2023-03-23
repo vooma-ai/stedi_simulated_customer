@@ -11,6 +11,7 @@ import { updateDotEnvFile } from "../support/utils.js";
 import { updateResourceMetadata } from "../support/bootstrapMetadata.js";
 import { bucketsClient } from "../lib/clients/buckets.js";
 import { sftpClient } from "../lib/clients/sftp.js";
+import { voomaDev } from "./bootstrap/names.js";
 
 const buckets = bucketsClient();
 const sftp = sftpClient();
@@ -31,7 +32,7 @@ const sftp = sftpClient();
   if (!user.bucketName) throw new Error("ftp bucket name not found");
 
   // Pre-create trading partner inbound/outbound directories for convenience
-  const tradingPartnerPrefix = "trading_partners/ANOTHERMERCH";
+  const tradingPartnerPrefix = `trading_partners/${voomaDev.id}`;
   const tradingPartnerDirectories = [
     `${tradingPartnerPrefix}/inbound/`,
     `${tradingPartnerPrefix}/outbound/`,

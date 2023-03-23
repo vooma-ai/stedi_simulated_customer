@@ -13,6 +13,7 @@
     "enable-notifications": "ts-node-esm ./src/setup/enableBucketNotifications.ts",
     "write-edi": "ts-node-esm ./src/scripts/writeEdi.ts",
     "execute": "ts-node-esm ./src/scripts/execute.ts",
+    "invoke": "ts-node-esm ./src/scripts/invokeOutbound.ts",
     "migrate": "ts-node-esm ./src/setup/migrate.ts",
     "test": "DOTENV_CONFIG_PATH=.env.test node -r dotenv/config ./node_modules/.bin/ava",
     "coverage": "DOTENV_CONFIG_PATH=.env.test c8 node -r dotenv/config ./node_modules/.bin/ava",

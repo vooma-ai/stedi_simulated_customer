@@ -15,10 +15,7 @@ export interface ResourceDetails {
 }
 
 // TODO: replace this with dynamic directory listing
-export const getEnabledTransactionSets = (): string[] => [
-  "X12-5010-850",
-  "X12-5010-855",
-];
+export const getEnabledTransactionSets = (): string[] => ["X12-4010-204"];
 
 export const functionNameFromPath = (fnPath: string): string => {
   // get function name excluding extension

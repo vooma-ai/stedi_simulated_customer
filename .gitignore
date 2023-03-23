@@ -4,3 +4,5 @@ dist
 .env
 coverage/
 .cache_ggshield
+.env.local
+.vscode/

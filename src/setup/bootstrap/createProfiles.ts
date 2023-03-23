@@ -5,24 +5,25 @@ import { SetValueCommand } from "@stedi/sdk-client-stash";
 import { PARTNERS_KEYSPACE_NAME } from "../../lib/constants.js";
 import { partnersClient } from "../../lib/clients/partners.js";
 import { stashClient } from "../../lib/clients/stash.js";
+import { voomaDev, simCustomer } from "./names.js";
 
 export const createProfiles = async () => {
   const profiles = [
     {
-      id: "this-is-me",
-      partnerName: "Me, Myself and I",
-      partnerInterchangeQualifier: "ZZ",
-      partnerInterchangeId: "THISISME",
+      id: voomaDev.id,
+      partnerName: voomaDev.partnerName,
+      partnerInterchangeQualifier: voomaDev.partnerInterchangeQualifier,
+      partnerInterchangeId: voomaDev.x12Id,
       acknowledgmentRequestedCode: "0",
-      partnerApplicationId: "MYAPPID",
+      partnerApplicationId: `${voomaDev.x12Id}_APP`,
     },
     {
-      id: "another-merchant",
-      partnerName: "A.N. & Other Merchants",
-      partnerInterchangeQualifier: "14",
-      partnerInterchangeId: "ANOTHERMERCH",
+      id: simCustomer.id,
+      partnerName: simCustomer.partnerName,
+      partnerInterchangeQualifier: simCustomer.partnerInterchangeQualifier,
+      partnerInterchangeId: simCustomer.x12Id,
       acknowledgmentRequestedCode: "0",
-      partnerApplicationId: "ANOTAPPID",
+      partnerApplicationId: `${simCustomer.x12Id}_APP`,
     },
   ];
 
